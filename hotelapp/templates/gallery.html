@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+{% endblock %}
+
+{% block main %}
+<main style="height: auto;">
+
+  <section class="main-container" style="min-height: fit-content;">
+
+    <!-- Hero Section -->
+    <div class="gallery-hero">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1 style="color: white;">Our Gallery</h1>
+          <p>Experience the elegance, comfort, and beauty of KC Hotels</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Luxury Interiors Grid -->
+    <div class="hotel-grid-section">
+      <div class="container">
+        <h2 class="section-title">Luxury Interiors</h2>
+        <p class="section-subtitle">Discover the perfect blend of style and serenity inside our hotels</p>
+
+        <div class="hotel-grid">
+          <div class="hotel-item large">
+            <img src="{% static 'images/grandlobby.jpg' %}" alt="Hotel Lobby">
+            <div class="hotel-overlay">
+              <div class="hotel-info">
+                <h4>Grand Lobby</h4>
+                <p>Welcoming elegance</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hotel-item">
+            <img src="{% static 'images/room22.jpg' %}" alt="Luxury Suite">
+            <div class="hotel-overlay">
+              <div class="hotel-info">
+                <h4>Luxury Suite</h4>
+                <p>Relax in style</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hotel-item">
+            <img src="{% static 'images/pool2.jpg' %}" alt="Infinity Pool">
+            <div class="hotel-overlay">
+              <div class="hotel-info">
+                <h4>Infinity Pool</h4>
+                <p>Serenity meets skyline</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hotel-item">
+            <img src="{% static 'images/dining.jpg' %}" alt="Fine Dining">
+            <div class="hotel-overlay">
+              <div class="hotel-info">
+                <h4>Fine Dining</h4>
+                <p>World-class cuisine</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hotel-item">
+            <img src="{% static 'images/spa.jpg' %}" alt="Spa Retreat">
+            <div class="hotel-overlay">
+              <div class="hotel-info">
+                <h4>Spa Retreat</h4>
+                <p>Rejuvenate your senses</p>
+              </div>
+            </div>
+          </div>
+          <div class="hotel-item">
+            <img src="{% static 'images/fountain.jpg' %}" alt="Spa Retreat">
+            <div class="hotel-overlay">
+              <div class="hotel-info">
+                <h4>Fountain</h4>
+                <p>Let the sound of the fountain soothe your soul</p>
+              </div>
+            </div>
+          </div>
+           <div class="hotel-item">
+            <img src="{% static 'images/golf.jpg' %}" alt="Spa Retreat">
+            <div class="hotel-overlay">
+              <div class="hotel-info">
+                <h4>Golf Course</h4>
+                <p>Grip it and rip it</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Stays Carousel -->
+    <div class="carousel-section">
+      <div class="overlay-panel">
+        <div class="container">
+          <h2 class="section-title" style="color: black;">Featured Stays</h2>
+          <p class="section-subtitle" style="color: black;">Explore the comfort and beauty of our most loved spaces</p>
+
+          <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="carousel-slide active">
+                <img src="{% static 'images/delux.jpg' %}" alt="Deluxe Room">
+                <div class="carousel-content">
+                  <h3>Deluxe Room</h3>
+                  <p>Spacious comfort with city view and elegant interiors</p>
+                </div>
+              </div>
+
+              <div class="carousel-slide">
+                <img src="{% static 'images/hon.jpg' %}" alt="Honeymoon Suite">
+                <div class="carousel-content">
+                  <h3>Honeymoon Suite</h3>
+                  <p>Romantic escape with jacuzzi and candlelit ambience</p>
+                </div>
+              </div>
+
+              <div class="carousel-slide">
+                <img src="{% static 'images/launge.jpg' %}" alt="Executive Lounge">
+                <div class="carousel-content">
+                  <h3>Executive Lounge</h3>
+                  <p>Private space for meetings, networking, and relaxation</p>
+                </div>
+              </div>
+
+              <div class="carousel-slide">
+                <img src="{% static 'images/hall.jpg' %}" alt="Conference Hall">
+                <div class="carousel-content">
+                  <h3>Conference Hall</h3>
+                  <p>Modern facilities for your corporate and social events</p>
+                </div>
+              </div>
+
+              <div class="carousel-slide">
+                <img src="{% static 'images/rest1.jpg' %}" alt="Skyline Restaurant">
+                <div class="carousel-content">
+                  <h3>Skyline Restaurant</h3>
+                  <p>Dine with breathtaking city views and gourmet flavors</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-controls">
+              <button class="carousel-btn prev" id="prevBtn">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="carousel-btn next" id="nextBtn">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+
+            <div class="carousel-indicators">
+              <span class="indicator active" data-slide="0"></span>
+              <span class="indicator" data-slide="1"></span>
+              <span class="indicator" data-slide="2"></span>
+              <span class="indicator" data-slide="3"></span>
+              <span class="indicator" data-slide="4"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Gallery Section -->
+    <div class="additional-gallery-section">
+      <div class="container" style="margin-bottom: 2%;">
+        <h2 class="section-title">Hotel Highlights</h2>
+        <p class="section-subtitle">A glimpse of our facilities, events, and experiences</p>
+
+        <div class="additional-grid">
+          <div class="gallery-item">
+            <img src="{% static 'images/gym.jpg' %}" alt="Fitness Center">
+            <div class="gallery-overlay">
+              <h4>Fitness Center</h4>
+              <p>Modern equipment for your workout</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="{% static 'images/bar2.jpg' %}" alt="Bar Lounge">
+            <div class="gallery-overlay">
+              <h4>Bar Lounge</h4>
+              <p>Enjoy cocktails and live music</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="{% static 'images/wed.jpg' %}" alt="Wedding Hall">
+            <div class="gallery-overlay">
+              <h4>Wedding Hall</h4>
+              <p>Celebrate your special day in grandeur</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="{% static 'images/garden2.jpg' %}" alt="Garden Area">
+            <div class="gallery-overlay">
+              <h4>Garden Area</h4>
+              <p>Peaceful outdoor retreats</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="{% static 'images/res2.jpg' %}" alt="Fine Dining Area">
+            <div class="gallery-overlay">
+              <h4>Fine Dining Area</h4>
+              <p>Luxury with every bite</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="{% static 'images/night.jpg' %}" alt="Hotel Night View">
+            <div class="gallery-overlay">
+              <h4>Night View</h4>
+              <p>City lights and calm nights</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/gallery.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,105 @@
+/* ========== WHAT'S NEW SECTION ========== */
+.new__updates {
+  margin-top: 4%;
+  padding: 5rem 1rem;
+  background-color:rgb(224, 213, 213);
+  text-align: center;
+}
+
+.new__updates .section__header {
+  margin-left: 30%;
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.new__updates .section__description {
+  color: var(--text-dark);
+  max-width: 650px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ========== UPDATE CARDS ========== */
+.updates__list {
+  display: grid;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.update__card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.update__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #fff8fc;
+}
+
+.update__card h3 {
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.update__card p {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.update__date {
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+  .new__updates {
+    padding: 4rem 1rem;
+  }
+
+  .update__card {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .updates__list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .new__updates .section__header {
+    font-size: 1.8rem;
+  }
+
+  .new__updates .section__description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .update__card {
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+  }
+
+  .update__card h3 {
+    font-size: 1.1rem;
+  }
+
+  .update__card p {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+
+{% block main %}
+<section class="menu-hero">
+    <h1>Our Exquisite Menu</h1>
+    <p>From sunrise to starlight — crafted with passion and luxury.</p>
+</section>
+
+<section class="menu-section">
+    <!-- Category: Starters -->
+    <div class="menu-category">
+        <h2>STARTERS</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <h3>Honey-Glazed Onion Rings</h3>
+                <p>Crispy onion rings glazed with honey and herbs.</p>
+                <span class="price">₹630</span>
+            </div>
+            <div class="menu-item">
+                <h3>Smoked Chicken Oufsmoula</h3>
+                <p>Tender smoked chicken with herb sauce and spice blend.</p>
+                <span class="price">₹830</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category: Salads -->
+    <div class="menu-category">
+        <h2>SALADS</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <h3>House Special Salad</h3>
+                <p>Fresh greens, olives, and signature dressing.</p>
+                <span class="price">₹673</span>
+            </div>
+            <div class="menu-item">
+                <h3>Cranberry Chicken Salad</h3>
+                <p>Grilled chicken with cranberries, greens, and walnuts.</p>
+                <span class="price">₹1200</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Repeat same pattern for all other categories (Breakfast, Burgers, Dinner, etc.) -->
+</section>
+{% endblock %}

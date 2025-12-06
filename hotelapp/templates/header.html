@@ -1,0 +1,59 @@
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+{% endblock %}
+
+<header class="header transparent">
+  <nav style="width: 100%; height: 10%;">
+    <div class="nav__bar">
+      <div class="logo">
+       <a href="javascript:void(0);" onclick="openLogoPopup()">
+         <img src="{% static 'images/logo.png' %}" alt="logo" width="130px" />
+       </a>
+
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-line" style="color: black;"></i>
+      </div>
+    </div>
+
+    <ul class="nav__links" id="nav-links">
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'rooms' %}">Rooms</a></li>
+      <li><a href="{% url 'gallery' %}">Gallery</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'menu' %}">Menu</a></li>
+      <a href="{% url 'rooms' %}" class="btn nav__btn" style="color: white;">Book Now</a>
+    </ul>
+  </nav>
+</header>
+
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const navLinks = document.getElementById('nav-links');
+const header = document.querySelector('.header');
+
+// Toggle mobile menu
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+    navLinks.classList.remove('active');
+  }
+});
+
+// Change header background on scroll
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    header.classList.remove('transparent');
+    header.classList.add('scrolled');
+  } else {
+    header.classList.add('transparent');
+    header.classList.remove('scrolled');
+  }
+});
+</script>

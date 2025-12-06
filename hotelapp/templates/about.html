@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About KC Hotels{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block main %}
+<main class="about-page">
+
+    <!-- ===== About Us Section ===== -->
+    <section class="about-us-section" style="margin-top: 4%;">
+        <div class="container">
+            <h2>About Us</h2>
+             <p class="tagline">At KC groups of Hotels, we believe hospitality is more than service — it’s creating lasting experiences filled with warmth, care, and elegance.</p>
+        <!-- ===== Hero / Story Section ===== -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <h2 class="section-title">Our Story</h2>
+                <div class="story-grid">
+                    <div class="story-text">
+                      <p class="story-intro">
+                          Founded in 2025, KC Hotels started as a vision to redefine hospitality, offering guests comfort, luxury, and personalized service in every stay.
+                      </p>
+                      <div class="story-details">
+                          <p>
+                              From a single boutique property, KC Hotels has expanded into a renowned hotel chain known for its elegance, attention to detail, and memorable guest experiences.
+                          </p>
+                          <p>
+                              Every hotel is designed to blend modern luxury with warm, welcoming service, creating spaces where guests feel at home while enjoying world-class amenities.
+                          </p>
+                          <p>
+                              Our journey is driven by a commitment to excellence, sustainability, and innovation, ensuring that each stay at KC Hotels is more than just a visit—it’s a lasting experience.
+                          </p>
+                        </div>
+
+                    </div>
+                      <div class="story-image">
+                          <img src="{% static 'images/rest-about.jpg' %}" alt="Our Story">
+                          <div class="image-overlay"></div>
+                      </div>
+            </div>
+        </div>
+    </section>
+           
+            <div class="values-grid">
+                <div class="value-card">
+                    <img src="{% static 'images/v1.jpg' %}" alt="Luxury Experience">
+                    <h4>Luxury Experience</h4>
+                    <p>Enjoy world-class interiors, elegant decor, and unmatched comfort during your stay.</p>
+                </div>
+                <div class="value-card">
+                    <img src="{% static 'images/v2.jpg' %}" alt="Delicious Cuisine">
+                    <h4>Delicious Cuisine</h4>
+                    <p>Our fine-dining restaurants and cafés serve global flavors made by expert chefs.</p>
+                </div>
+                <div class="value-card">
+                    <img src="{% static 'images/v3.jpg' %}" alt="Exceptional Service">
+                    <h4>Exceptional Service</h4>
+                    <p>Our team is dedicated to ensuring every moment you spend with us feels special.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Our Journey / Stats Section ===== -->
+    <section class="our-journey-section">
+        <div class="container">
+            <h2>Our Journey</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h2>10+</h2>
+                    <p>Years of Excellence</p>
+                </div>
+                <div class="stat-item">
+                    <h2>50K+</h2>
+                    <p>Happy Guests</p>
+                </div>
+                <div class="stat-item">
+                    <h2>15</h2>
+                    <p>Luxury Locations</p>
+                </div>
+                <div class="stat-item">
+                    <h2>100%</h2>
+                    <p>Guest Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== Gallery Section ===== -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Our Hotel</h2>
+            <p class="gallery-subtitle">Step into our world of hospitality and elegance</p>
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <img src="{% static 'images/main.jpg' %}" alt="Lobby">
+                    <div class="gallery-overlay">
+                        <h4>Main Lobby</h4>
+                        <p>Elegant and welcoming</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="{% static 'images/guest.jpg' %}" alt="Guest Room">
+                    <div class="gallery-overlay">
+                        <h4>Guest Room</h4>
+                        <p>Comfortable and cozy</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="{% static 'images/dining.jpg' %}" alt="Dining Area">
+                    <div class="gallery-overlay">
+                        <h4>Dining Area</h4>
+                        <p>Relax and enjoy meals</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="{% static 'images/patio.jpg' %}" alt="Outdoor Patio">
+                    <div class="gallery-overlay">
+                        <h4>Outdoor Patio</h4>
+                        <p>Al fresco experience</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="{% static 'images/spa.jpg' %}" alt="Spa">
+                    <div class="gallery-overlay">
+                        <h4>Spa Area</h4>
+                        <p>Relax and rejuvenate</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="{% static 'images/pool.jpg' %}" alt="Spa">
+                    <div class="gallery-overlay">
+                        <h4>Pool Area</h4>
+                        <p>Dive into a world of wonder</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="{% static 'images/bar.jpg' %}" alt="Spa">
+                    <div class="gallery-overlay">
+                        <h4>Bar Area</h4>
+                        <p>Where elegance meets comfort</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="{% static 'images/lawn.jpg' %}" alt="Spa">
+                    <div class="gallery-overlay">
+                        <h4>Lawn Area</h4>
+                        <p>Your Oasis of Serenity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

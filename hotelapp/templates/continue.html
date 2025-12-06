@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}What's New - KC Hotels{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/continue.css' %}">
+{% endblock %}
+
+{% block main %}
+<section class="new__updates">
+  <h2 class="section__header">What's New Today</h2>
+  <p class="section__description">
+    Discover the latest updates, offers, and experiences from KC Hotels — where comfort meets elegance every day.
+  </p>
+
+  <div class="updates__list">
+    <article class="update__card">
+      <h3>🍽 New Breakfast Menu Launched</h3>
+      <p>Indulge in our refreshed breakfast lineup — featuring fresh fruit platters, continental delights, and Indian classics, curated for an energizing start to your day.</p>
+      <span class="update__date">Date: 30th October 2025</span>
+    </article>
+
+    <article class="update__card">
+      <h3>🛏 Executive Suite Upgrade</h3>
+      <p>Our executive suites now feature panoramic views, cozy seating lounges, and complimentary spa vouchers for a luxurious stay experience.</p>
+      <span class="update__date">Date: 29th October 2025</span>
+    </article>
+
+    <article class="update__card">
+      <h3>🎉 Grand Diwali Celebration</h3>
+      <p>Join our annual Diwali celebration — featuring festive décor, live music, and traditional dining experiences under a sky of lights.</p>
+      <span class="update__date">Date: 27th October 2025</span>
+    </article>
+
+    <article class="update__card">
+      <h3>💆‍♀️ KC Wellness Spa Opens</h3>
+      <p>Unwind at our new luxury spa offering therapeutic massages, aromatherapy, and relaxation rituals — open daily from 8 AM to 9 PM.</p>
+      <span class="update__date">Date: 25th October 2025</span>
+    </article>
+
+    <article class="update__card">
+      <h3>🍸 Rooftop Lounge Experience</h3>
+      <p>Enjoy mesmerizing sunsets and signature cocktails at our brand-new rooftop bar, open every weekend with live acoustic performances.</p>
+      <span class="update__date">Date: 22nd October 2025</span>
+    </article>
+
+    <article class="update__card">
+      <h3>🌿 Go Green Initiative</h3>
+      <p>KC Hotels has gone sustainable! We now use solar energy, eco-friendly toiletries, and biodegradable packaging across all properties.</p>
+      <span class="update__date">Date: 20th October 2025</span>
+    </article>
+
+    <article class="update__card">
+      <h3>🎓 Hospitality Internship Program</h3>
+      <p>We’re now accepting applications for our Winter 2025 Internship Program. Work alongside professionals and learn the art of luxury hospitality.</p>
+      <span class="update__date">Date: 18th October 2025</span>
+    </article>
+
+    <article class="update__card">
+      <h3>🎁 Winter Staycation Offer</h3>
+      <p>Book a 2-night stay and get the 3rd night free! Offer includes breakfast, late checkout, and a complimentary couple spa voucher.</p>
+      <span class="update__date">Date: 15th October 2025</span>
+    </article>
+
+    <article class="update__card">
+      <h3>🍷 Wine & Dine Evening</h3>
+      <p>Experience elegance at our weekly Wine & Dine event featuring curated dishes paired with world-class wines — every Saturday evening.</p>
+      <span class="update__date">Date: 10th October 2025</span>
+    </article>
+  </div>
+</section>
+{% endblock %}

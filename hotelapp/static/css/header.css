@@ -1,0 +1,233 @@
+/* ===== HEADER & NAVBAR STYLING ===== */
+:root {
+  --primary-color: #e82574;
+  --primary-dark: #bc1c5c;
+  --white: #ffffff;
+  --text-dark: #0c0a09;
+  --text-light: #78716c;
+}
+
+/* Base Header */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 999;
+  transition: all 0.4s ease;
+  box-shadow: none;
+}
+
+/* Transparent Header (initial) */
+.header.transparent {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Scrolled Header (changes to black) */
+.header.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Centered Navigation bar container */
+.nav__bar {
+  max-width: 1200px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+/* Logo */
+.logo img {
+  width: 180px;
+  height: 70px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Shrink logo on scroll */
+.header.scrolled .logo img {
+  width: 140px;
+  height: 55px;
+}
+
+/* Nav links */
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Default link color (when header is scrolled / normal) */
+.nav__links li a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav__links li a:hover {
+  color: var(--primary-color);
+}
+
+/* When header is transparent (over hero section) */
+.header.transparent .nav__links li a {
+  color: var(--white);
+}
+
+/* When header is scrolled (black background) */
+.header.scrolled .nav__links li a {
+  color: #f5f5f5;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  background: var(--white);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Buttons */
+.btn {
+  background: var(--primary-color);
+  color:white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  color: white;
+}
+
+.nav__btn {
+  font-size: 0.9rem;
+}
+
+/* Login & Logout buttons */
+.login-btn {
+  background: var(--primary-color);
+}
+
+.logout-btn {
+  background: #333;
+}
+
+.logout-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* Mobile menu button */
+.nav__menu__btn {
+  display: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--text-dark);
+}
+
+/* When header is transparent, make menu icon white */
+.header.transparent .nav__menu__btn i {
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  /* Navbar links become vertical sliding menu */
+  .nav__links {
+    position: absolute;
+    top: 100%;       /* below header */
+    right: -100%;    /* hidden initially */
+    background: var(--white);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  /* Show menu when active */
+  .nav__links.active {
+    right: 0;
+  }
+
+  /* Hide "Book Now" nav button on mobile */
+  .nav__btn {
+    display: none;
+  }
+
+  /* Show hamburger menu button */
+  .nav__menu__btn {
+    display: block;
+  }
+
+  /* Ensure links are dark on mobile menu */
+  .nav__links li a {
+    color: var(--text-dark) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Reduce logo size */
+  .logo img {
+    width: 140px;
+    height: 55px;
+  }
+
+  /* Reduce spacing between nav links */
+  .nav__links {
+    gap: 1rem;
+  }
+
+  /* Reduce font size of nav links */
+  .nav__links li a {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,443 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+<!-- ===== Logo Popup Modal ===== -->
+<div id="logoPopup" class="logo-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+  <div class="logo-popup-content" style="position:relative; background:white; padding:2rem; border-radius:10px; max-width:400px;">
+    <span class="close-btn" onclick="closeLogoPopup()" style="position:absolute; top:10px; right:15px; font-size:2rem; cursor:pointer;">&times;</span>
+    <img src="{% static 'images/logo.png' %}" alt="KC Hotels Logo" class="popup-logo-img" style="width:100%; object-fit:contain;">
+  </div>
+</div>
+
+<!-- ===== Hero Section ===== -->
+<section class="hero" id="home">
+  <video autoplay muted loop playsinline class="hero__video">
+    <source src="{% static 'images/rooms/wshbtaj.mp4' %}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="section__container header__container">
+    <p style="color:white; font-weight: 600;">Simple - Unique - Friendly</p>
+    <h1 style="color: white; margin: 8%;">Make Yourself At Home<br />In Our <span style="color:goldenrod;">Hotel</span>.</h1>
+  </div>
+</section>
+
+
+
+<!-- ===== About Section ===== -->
+<section class="section__container about__container" id="about">
+  <div class="about__image">
+    <img src="{% static 'images/about.jpg' %}" alt="about" />
+  </div>
+  <div class="about__content">
+    <p class="section__subheader">ABOUT US</p>
+    <h2 class="section__header">The Best Holidays Start Here!</h2>
+    <p class="section__description">
+      With a focus on quality accommodations, personalized experiences, and seamless booking, our platform is dedicated to ensuring every traveler embarks on their dream holiday with confidence and excitement.
+      <br><br>
+      At <strong style="color: rgb(110, 9, 26);">KC Groups of Hotel</strong>, we blend luxury with comfort to bring you an unforgettable stay experience. Whether it’s a relaxing weekend escape, a family vacation, or a business trip, our hotels are designed to make every moment special.
+    </p>
+    <div class="about__btn">
+      <a href="{% url 'about' %}" class="btn" style="color:white;">Read More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Room Section ===== -->
+<section class="section__container room__container">
+  <p class="section__subheader">OUR LIVING ROOM</p>
+  <h2 class="section__header">The Most Memorable Rest Time Starts Here.</h2>
+  <div class="room__grid">
+    <!-- Room 1 -->
+    <div class="room__card">
+      <div class="room__card__image">
+        <img src="{% static 'images/room-1.jpg' %}" alt="room" />
+        <div class="room__card__icons">
+          <span><i class="ri-heart-fill"></i></span>
+          <span><i class="ri-paint-fill"></i></span>
+          <span><i class="ri-shield-star-line"></i></span>
+        </div>
+      </div>
+      <div class="room__card__details">
+        <h4>Deluxe Ocean View</h4>
+        <p>Bask in luxury with breathtaking ocean views from your private suite.</p>
+        <h5>Starting from <span>RS 6500/night</span></h5>
+        <button style="border:none;"><a href="{% url 'rooms' %}" class="btn" style="color:white;">Check Now</a></button>
+      </div>
+    </div>
+
+    <!-- Room 2 -->
+    <div class="room__card">
+      <div class="room__card__image">
+        <img src="{% static 'images/room-2.jpg' %}" alt="room" />
+        <div class="room__card__icons">
+          <span><i class="ri-heart-fill"></i></span>
+          <span><i class="ri-paint-fill"></i></span>
+          <span><i class="ri-shield-star-line"></i></span>
+        </div>
+      </div>
+      <div class="room__card__details">
+        <h4>Executive Cityscape Room</h4>
+        <p>Experience urban elegance and modern comfort in the heart of the city.</p>
+        <h5>Starting from <span>RS 10000/night</span></h5>
+        <button style="border:none;"><a href="{% url 'rooms' %}" class="btn" style="color:white;">Check Now</a></button>
+      </div>
+    </div>
+
+    <!-- Room 3 -->
+    <div class="room__card">
+      <div class="room__card__image">
+        <img src="{% static 'images/room-3.jpg' %}" alt="room" />
+        <div class="room__card__icons">
+          <span><i class="ri-heart-fill"></i></span>
+          <span><i class="ri-paint-fill"></i></span>
+          <span><i class="ri-shield-star-line"></i></span>
+        </div>
+      </div>
+      <div class="room__card__details">
+        <h4>Family Garden Retreat</h4>
+        <p>Spacious and inviting, perfect for creating cherished memories with loved ones.</p>
+        <h5>Starting from <span>Rs 7000/night</span></h5>
+        <button style="border:none;"><a href="{% url 'rooms' %}" class="btn" style="color:white;">Check Now</a></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services Section ===== -->
+<section class="service" id="service">
+  <div class="section__container service__container">
+    <div class="service__content">
+      <p class="section__subheader">SERVICES</p>
+      <h2 class="section__header">Strive Only For The Best.</h2>
+      <ul class="service__list">
+        <li><span><i class="ri-cup-line"></i></span>Exclusive Concierge Services</li>
+        <li><span><i class="ri-24-hours-line"></i></span>24 Hours Room Service</li>
+        <li><span><i class="ri-headphone-line"></i></span>Conference Room</li>
+        <li><span><i class="ri-map-2-line"></i></span>Tourist Guide Available</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Banner Section ===== -->
+<section class="section__container banner__container">
+  <div class="banner__content">
+    <div class="banner__card">
+      <h4>25+</h4>
+      <p>Properties Available</p>
+    </div>
+    <div class="banner__card">
+      <h4>350+</h4>
+      <p>Bookings Completed</p>
+    </div>
+    <div class="banner__card">
+      <h4>600+</h4>
+      <p>Happy Customers</p>
+    </div>
+  </div>
+</section>
+<!-- ===== Testimonials Section ===== -->
+<section class="testimonials section__container">
+  <p class="section__subheader">TESTIMONIALS</p>
+  <h2 class="testimonial-heading">What Our Guests Say</h2>
+
+  <div class="testimonial-grid">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-card">
+      <img src="{% static 'images/testi1.jpeg' %}" alt="Customer 1" class="testimonial-img">
+      <h4>Rohit Sharma</h4>
+      <p>"KC Groups of Hotel provided an unforgettable stay. The staff was extremely friendly and the rooms were perfect."</p>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card">
+      <img src="{% static 'images/testi2.jpeg' %}" alt="Customer 2" class="testimonial-img">
+      <h4>Anjali Verma</h4>
+      <p>"Loved the luxurious rooms and amazing view. Everything was top-notch. Highly recommend this hotel!"</p>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card">
+      <img src="{% static 'images/testi3.jpeg' %}" alt="Customer 3" class="testimonial-img">
+      <h4>Vikram Singh</h4>
+      <p>"The food, the service, and the ambiance – everything was perfect. Will definitely come back."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Explore Section ===== -->
+<section class="explore" style="margin-top: 6%;" id="explore">
+  <p class="section__subheader">EXPLORE</p>
+  <h2 class="section__header">What's New Today.</h2>
+  <div class="explore__bg">
+    <div class="explore__content">
+      <p class="section__description">10th NOV 2025</p>
+      <h4>A New Menu Is Available</h4>
+      <a href="{% url 'continue' %}" class="btn nav__btn" style="color: black;">Continue</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Menu Popup Modal ===== -->
+<div id="menuPopup" class="menu-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+  <div class="menu-popup-content" style="background:white; padding:2rem; border-radius:10px; max-height:80%; overflow-y:auto; width:90%; max-width:900px; position:relative;">
+    <span class="close-btn" onclick="closeMenuPopup()" style="position:absolute; top:10px; right:15px; font-size:2rem; cursor:pointer;">&times;</span>
+    <h2 style="text-align:center; margin-bottom:1.5rem;">Our Exquisite Menu</h2>
+    <div class="menu-container">
+      {% for category in categories %}
+      <div class="menu-category" style="margin-bottom:2rem;">
+        <h3 style="color:#d4af37;">{{ category.name }}</h3>
+        <div class="menu-items" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1rem;">
+          {% for item in category.items.all %}
+          <div class="menu-item" style="border:1px solid #ddd; border-radius:8px; padding:1rem; text-align:center;">
+            {% if item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.name }}" style="width:100%; height:150px; object-fit:cover; border-radius:5px; margin-bottom:0.5rem;">
+            {% endif %}
+            <h4>{{ item.name }}</h4>
+            <p style="font-size:0.9rem; color:#555;">{{ item.description }}</p>
+            <span style="color:#d4af37; font-weight:bold;">Rs {{ item.price }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- ===== LUXURY EXPERIENCE POPUP ===== -->
+<div id="experiencePopup" class="luxury-popup">
+  <div class="luxury-popup-content fade-in">
+    <span class="close-popup" onclick="closeExperiencePopup()">&times;</span>
+
+    <!-- Logo -->
+    <img src="{% static 'images/logo.png' %}" alt="KC Hotels Logo" class="popup-logo mb-3">
+
+    <!-- Hero Text -->
+    <h2 class="popup-heading">🌟 Discover the Art of Luxury Living 🌟</h2>
+    <p class="popup-subtext">
+      Welcome to <strong>KC Group of Hotels</strong> — where every stay feels like a story worth telling.  
+      Unwind, indulge, and experience the elegance you deserve.
+    </p>
+
+    <!-- Highlights Section -->
+    <div class="popup-highlights">
+      <div class="highlight-card">
+        <img src="{% static 'images/spaaa.jpg' %}" alt="Spa" class="highlight-img">
+        <p>Relax at our world-class <strong>KC Spa & Wellness</strong></p>
+      </div>
+      <div class="highlight-card">
+        <img src="{% static 'images/finedine.jpg' %}" alt="Fine Dining" class="highlight-img">
+        <p>Experience <strong>Royal Fine Dining</strong> with global cuisines</p>
+      </div>
+      <div class="highlight-card">
+        <img src="{% static 'images/mount.jpg' %}" alt="Mountain View" class="highlight-img">
+        <p>Wake up to <strong>Breathtaking Mountain Views</strong></p>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="popup-buttons">
+      <a href="{% url 'rooms' %}" class="btn btn-primary popup-btn">🏨 Explore Rooms</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CSS ===== -->
+<style>
+.luxury-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.luxury-popup-content {
+  background: linear-gradient(145deg, #fff, #f5f5f5);
+  color: #333;
+  width: 90%;
+  max-width: 700px;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  text-align: center;
+  position: relative;
+  animation: slideUp 0.7s ease-in-out;
+}
+
+.close-popup {
+  position: absolute;
+  top: 15px; right: 20px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.popup-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.popup-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d4af37; /* gold tone */
+  margin-bottom: 10px;
+}
+
+.popup-subtext {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.popup-highlights {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.highlight-card {
+  flex: 1;
+  min-width: 150px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.highlight-card:hover {
+  transform: scale(1.05);
+}
+
+.highlight-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.popup-buttons .popup-btn {
+  margin: 0 10px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.3s;
+}
+
+.popup-buttons .popup-btn:hover {
+  transform: translateY(-3px);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+</style>
+
+<!-- ===== JS ===== -->
+<script>
+  function openExperiencePopup() {
+    document.getElementById("experiencePopup").style.display = "flex";
+  }
+  function closeExperiencePopup() {
+    document.getElementById("experiencePopup").style.display = "none";
+  }
+
+  // Auto-open popup 2 seconds after page load (optional)
+  window.onload = function() {
+    setTimeout(openExperiencePopup, 2000);
+  };
+</script>
+
+
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+
+// Minimal test for booking popup
+function openBookingPopup() {
+  const popup = document.getElementById("bookingPopup");
+  if (popup) {
+    popup.style.display = "flex";
+  } else {
+    console.error("Popup element not found!");
+  }
+}
+
+function closeBookingPopup() {
+  const popup = document.getElementById("bookingPopup");
+  if (popup) {
+    popup.style.display = "none";
+  }
+}
+
+// Auto open after 4 seconds on home page
+window.addEventListener("load", () => {
+  if (window.location.pathname === '/'){
+  setTimeout(() => {
+  openBookingPopup();
+  }, 2000);
+  }
+});
+
+
+
+
+// Custom Dropdowns
+function setupCustomSelect(selectId, inputId) {
+  const selectBox = document.getElementById(selectId);
+  const selected = selectBox.querySelector(".selected");
+  const options = selectBox.querySelectorAll(".options li");
+  const hiddenInput = document.getElementById(inputId);
+
+  selectBox.addEventListener("click", () => selectBox.classList.toggle("active"));
+  options.forEach(option => {
+    option.addEventListener("click", () => {
+      selected.textContent = option.textContent;
+      hiddenInput.value = option.getAttribute("data-value");
+      selectBox.classList.remove("active");
+    });
+  });
+  window.addEventListener("click", e => {
+    if (!selectBox.contains(e.target)) selectBox.classList.remove("active");
+  });
+}
+setupCustomSelect("hotelSelect", "hotel");
+setupCustomSelect("locationSelect", "location");
+setupCustomSelect("roomSelect", "room");
+
+// Logo Popup
+function openLogoPopup() { document.getElementById("logoPopup").style.display = "flex"; }
+function closeLogoPopup() { document.getElementById("logoPopup").style.display = "none"; }
+
+// Menu Popup
+function openMenuPopup() { document.getElementById("menuPopup").style.display = "flex"; }
+function closeMenuPopup() { document.getElementById("menuPopup").style.display = "none"; }
+
+// Close popups if click outside
+window.addEventListener("click", function(event) {
+  const logoPopup = document.getElementById("logoPopup");
+  const menuPopup = document.getElementById("menuPopup");
+  if (event.target === logoPopup) logoPopup.style.display = "none";
+  if (event.target === menuPopup) menuPopup.style.display = "none";
+});
+
+
+</script>
+{% endblock %}

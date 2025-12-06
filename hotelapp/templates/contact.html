@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block main %}
+<section class="contact-section">
+  <div class="overlay"></div>
+  <div class="section__container contact-wrapper">
+
+    <!-- Section Heading -->
+    <div class="contact-header">
+      <h1>Contact Us</h1>
+      <p>We’d love to hear from you. Let’s make your stay unforgettable.</p>
+    </div>
+
+    <!-- Contact Form -->
+    <form action="{% url 'contact' %}" method="POST" class="contact-form" id="contactForm">
+      {% csrf_token %}
+      
+      <!-- Slide-Down Alert -->
+      <div id="formAlert" class="form-alert"></div>
+
+      <h2>Send a Message</h2>
+      <div class="input-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="input-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="input-group">
+        <input type="text" name="subject" placeholder="Subject" required>
+      </div>
+      <div class="input-group">
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Our Location</h2>
+      <p><i class="ri-map-pin-fill"></i> 123 Luxury Street, Mohali, Punjab</p>
+      <p><i class="ri-phone-fill"></i> +91 0000000000</p>
+      <p><i class="ri-mail-fill"></i> kcgroupsofhotels@info.com</p>
+      <p><i class="ri-time-fill"></i> Mon - Sun : 9:00 AM - 10:00 PM</p>
+
+      <!-- Google Map Embed -->
+      <div class="google-map" style="margin-top: 30px;">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.4218925581804!2d76.74494417543876!3d30.67840367461058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fec0fc0000001%3A0x2fe21eed866f0d52!2sThinkNEXT%20Technologies%20-%20digital%20marketing%20industrial%20training%20internship%20chandigarh%20mohali!5e0!3m2!1sen!2sin!4v1762368748433!5m2!1sen!2sin"
+          width="100%" 
+          height="250" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JS for Slide-Down Alert -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const alertBox = document.getElementById('formAlert');
+
+    // Pass Django messages to JS
+    const successMsg = "{{ success|default:''|escapejs }}";
+    const errorMsg = "{{ error|default:''|escapejs }}";
+
+    if(successMsg) {
+        showAlert(successMsg, "success");
+    } else if(errorMsg) {
+        showAlert(errorMsg, "error");
+    }
+
+    function showAlert(message, type) {
+        alertBox.textContent = message;
+        alertBox.classList.add(type);
+        alertBox.style.display = 'block';
+        
+        // Slide-down animation
+        setTimeout(() => {
+            alertBox.style.top = '10px';
+            alertBox.style.opacity = '1';
+        }, 10);
+
+        // Auto hide after 3 seconds
+        setTimeout(() => {
+            alertBox.style.top = '-60px';
+            alertBox.style.opacity = '0';
+            setTimeout(() => {
+                alertBox.classList.remove(type);
+                alertBox.style.display = 'none';
+            }, 500);
+        }, 3000);
+    }
+});
+</script>
+{% endblock %}
