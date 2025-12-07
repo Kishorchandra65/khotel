@@ -68,8 +68,8 @@ class Command(BaseCommand):
             },
         ]
 
-       # for r in rooms:
-        #    image_path = Path('hotelapp/static/images/rooms') / r['image']  # path where images exist
-         #   with open(image_path, 'rb') as f:
-          #      r['image'] = File(f)
-           #     Room.objects.create(**r)
+        for r in rooms:
+            image_path = Path('hotelapp/static/images/rooms') / r['image']  # path where images exist
+            with open(image_path, 'rb') as f:
+                r['image'] = File(f)
+                Room.objects.create(**r)
